@@ -4,6 +4,7 @@ on: pull_request
 jobs:
   lint:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     strategy:
       matrix:
         node-version: ['14', '16', '18']
@@ -38,6 +39,7 @@ jobs:
 
   type-check:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     strategy:
       matrix:
         node-version: ['14', '16', '18']
@@ -71,9 +73,10 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     strategy:
       matrix:
-        node-version: ['12', '14', '16']
+        node-version: ['14', '16', '18']
 
     steps:
       - uses: actions/checkout@v3
